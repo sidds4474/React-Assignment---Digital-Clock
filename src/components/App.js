@@ -5,8 +5,7 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
-            time: "00:00:00",
-            intervalID: ''
+            time: '0:00:00 AM'
         }
         
         this.dateFunction = this.dateFunction.bind(this)
@@ -27,12 +26,11 @@ class App extends Component {
     }
 
     componentDidMount() {
-        let loadInterval = setInterval(this.dateFunction, 1000)
-        this.setState({intervalID: loadInterval})
+        this.loadInterval = setInterval(this.dateFunction, 1000)
     }
 
     componentWillUnmount() {
-        clearInterval(this.state.intervalID)
+        clearInterval(this.loadInterval)
     }
 
     render() {
