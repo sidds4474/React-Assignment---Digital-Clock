@@ -5,7 +5,7 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
-            time: '0:00:00 AM'
+            time:  new Date().toLocaleTimeString()
         }
         
         this.dateFunction = this.dateFunction.bind(this)
